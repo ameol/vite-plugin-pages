@@ -6,7 +6,7 @@ import { ViteDevServer } from 'vite'
 import { OutputBundle } from 'rollup'
 import { toArray, slash } from '@antfu/utils'
 import { ResolvedOptions, Route } from './types'
-import { parseSFC, parseCustomBlock } from './parser'
+import { parseSFC, parseMdxSFC, parseCustomBlock } from './parser'
 import { MODULE_ID_VIRTUAL } from './constants'
 
 export { toArray, slash }
@@ -92,7 +92,12 @@ export function findRouteByFilename(routes: Route[], filename: string): Route | 
 
 export function getRouteBlock(path: string, options: ResolvedOptions) {
   const content = fs.readFileSync(path, 'utf8')
-  const parsed = parseSFC(content)
+  let parsed;
+  if (path.endsWith('mdx')) {
+    parsed = parseMdxSFC(content)
+  } else {
+    parsed = parseSFC(content)
+  }
 
   const blockStr = parsed.customBlocks.find(b => b.type === 'route')
   if (!blockStr) return null

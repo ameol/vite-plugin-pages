@@ -75,7 +75,7 @@ function setPage(
   const component = slash(join(pageDir.dir, file))
   const filepath = slash(resolve(options.root, component))
   const extension = extname(file).slice(1)
-  const customBlock = ['vue', 'md'].includes(extension)
+  const customBlock = ['vue', 'md', 'mdx'].includes(extension)
     ? getRouteBlock(filepath, options)
     : null
 

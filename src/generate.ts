@@ -41,7 +41,7 @@ function prepareRoutes(
       route.children = prepareRoutes(route.children, options, route)
     }
 
-    if (!options.react)
+    // if (!options.react)
       Object.assign(route, route.customBlock || {})
 
     delete route.customBlock

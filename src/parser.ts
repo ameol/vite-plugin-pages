@@ -1,3 +1,4 @@
+import matter from "gray-matter";
 import { ResolvedOptions } from './types'
 
 export interface CustomBlock {
@@ -19,6 +20,19 @@ export function parseSFC(code: string): ParseResult {
     }).descriptor
   } catch {
     throw new Error('[vite-plugin-pages] Vue3\'s "@vue/compiler-sfc" is required.')
+  }
+}
+export function parseMdxSFC(code: string): ParseResult {
+  try {
+    const { data } = matter(code);
+    return {
+      customBlocks: [{
+        type: 'route',
+        content: JSON.stringify(data),
+      }]
+    }
+  } catch {
+    throw new Error('mdx....')
   }
 }
 

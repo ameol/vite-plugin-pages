@@ -33,7 +33,7 @@ export function handleHMR(server: ViteDevServer, pages: Map<string, ResolvedPage
   })
   watcher.on('change', (file) => {
     const path = slash(file)
-    if (isTarget(path, options) && !options.react) {
+    if (isTarget(path, options) && (!options.react || path.endsWith('.mdx'))) {
       const needReload = isRouteBlockChanged(path, options)
       if (needReload) {
         updatePage(pages, path)

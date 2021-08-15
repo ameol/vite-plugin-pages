@@ -6,7 +6,7 @@ const index: React.FC = () => {
     <div>
       <p>index.vue</p>
       <Link to="/blog">
-        blog
+        blog2
       </Link> |
       <Link to="/about">
         about
@@ -18,7 +18,7 @@ const index: React.FC = () => {
         markdown
       </Link> |
       <Link to="/xxx">
-        not exits
+        not exits1
       </Link>
     </div>
   )
