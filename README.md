@@ -1,3 +1,5 @@
+## 修改：react模式下，mdx文件修改（meta部分，使用gray-matter）可以自动重置路由
+
 # vite-plugin-pages
 
 [![npm version](https://badgen.net/npm/v/vite-plugin-pages)](https://www.npmjs.com/package/vite-plugin-pages)

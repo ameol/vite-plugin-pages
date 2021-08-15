@@ -1,13 +1,13 @@
 {
-  "name": "vite-plugin-pages",
+  "name": "@ameol/vite-plugin-pages",
   "version": "0.17.3",
   "description": "File system base vue-router plugin for Vite",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/hannoeru/vite-plugin-pages"
+    "url": "https://github.com/ameol/vite-plugin-pages"
   },
-  "author": "hannoeru <me@hanlee.co>",
+  "author": "ameol",
   "files": [
     "dist",
     "client.d.ts",
@@ -16,8 +16,8 @@
   "main": "dist/index.js",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "homepage": "https://github.com/hannoeru/vite-plugin-pages",
-  "bugs": "https://github.com/hannoeru/vite-plugin-pages/issues",
+  "homepage": "https://github.com/ameol/vite-plugin-pages",
+  "bugs": "https://github.com/ameol/vite-plugin-pages/issues",
   "scripts": {
     "dev": "npm run build -- --watch --ignore-watch examples",
     "build": "tsup src/index.ts --dts --format cjs,esm --no-splitting",
